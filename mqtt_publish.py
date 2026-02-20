@@ -21,4 +21,4 @@ client.connect(mqttBroker)
 client.loop_start()
 
 def publish_data(data):
-    client.publish("traffic/stats", json.dumps(data), qos=1)
+    client.publish("traffic/junction_1/west", json.dumps(data), qos=1)

@@ -7,7 +7,9 @@ def on_message(client, userdata, message):
 def on_connect(client, userdata, flags, reason_code, properties=None):
     print("Connected with reason code:", reason_code)
     if reason_code == 0:
-        client.subscribe("traffic/stats")
+        print("Connecting...")
+        client.subscribe("traffic/junction_1/decision")
+        print("Connected...")
 
 mqttBroker = "broker.hivemq.com"
 client = mqtt.Client(callback_api_version=mqtt.CallbackAPIVersion.VERSION2, client_id="Smartphone", protocol=mqtt.MQTTv5)

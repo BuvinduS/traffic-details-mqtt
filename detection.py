@@ -125,7 +125,6 @@ def run_detection(on_update=None, update_interval=2):
         if on_update and frame_number - last_update_frame >= update_interval_frames:
             on_update({
                 "vehicle_count": count,
-                "active_vehicles": len(prev_centers),
                 "timestamp": time.time()
             })
             last_update_frame = frame_number
